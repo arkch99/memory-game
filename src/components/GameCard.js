@@ -12,8 +12,9 @@ const GameCard = function(props){
 		>
 			<CardActionArea>
 				<CardMedia
+					component="img"					
 					className="card-img"
-					image="./default.png"
+					image="/assets/images/default.png"
 				/>			
 				<CardContent>
 					<Typography 

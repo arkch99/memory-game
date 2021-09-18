@@ -35,7 +35,7 @@ const planeNames = {
 
 const getRandomIDList = function(){
 	const newPlaneList = shuffle(range, {'copy':true});	
-	console.log(newPlaneList);
+	// console.log(newPlaneList);
 	return newPlaneList;
 }
 
@@ -89,7 +89,7 @@ const App = function() {
 			</AppBar>
 			<ScoreDisplay currScore={currScore} highScore={highScore}/>
 			<div className="game-area">
-				{ planeList.map(plane => <GameCard cardID={plane} cardName={planeNames[plane]} cardClickHandler={cardClickHandler}/>) }
+				{ planeList.map(plane => <GameCard key={plane} cardID={plane} cardName={planeNames[plane]} cardClickHandler={cardClickHandler}/>) }
 			</div>
 		</div>
 	);
