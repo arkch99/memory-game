@@ -14,7 +14,7 @@ const GameCard = function(props){
 				<CardMedia
 					component="img"					
 					className="card-img"
-					image="/assets/images/default.png"
+					image={`/assets/images/${props.cardID}.jpg`}
 				/>			
 				<CardContent>
 					<Typography 
