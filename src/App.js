@@ -85,7 +85,7 @@ const App = function() {
 
 	return (
 		<div>
-			<AppBar className="app-bar">
+			<AppBar position="static" className="app-bar">
 				<Typography variant="h1" className="app-header">
 					Warbird Memory Game
 				</Typography>
@@ -93,7 +93,7 @@ const App = function() {
 			<ScoreDisplay currScore={currScore} highScore={highScore}/>
 			
 			<div className="game-area">
-			<Grid container className="game-grid" columns="12">
+			<Grid container className="game-grid" columns="12" columnSpacing="40">
 				{ planeList.map(plane => <GameCard key={plane} cardID={plane} cardName={planeNames[plane]} cardClickHandler={cardClickHandler}/>) }
 			</Grid>
 			</div>

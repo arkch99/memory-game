@@ -5,6 +5,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
+import './GameCard.css';
+
 const GameCard = function(props){
 	return (
 		<Card className="game-card" 
