@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import shuffle from 'shuffle-array';
 import GameCard from './components/GameCard';
 import ScoreDisplay from './components/ScoreDisplay';
 
 import '@fontsource/roboto';
+
+import './App.css';
 
 // const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
 const range = (() => Array.from({ length: (20 - 1) / 1 + 1}, (_, i) => 1 + (i * 1)))(); 
@@ -88,8 +91,11 @@ const App = function() {
 				</Typography>
 			</AppBar>
 			<ScoreDisplay currScore={currScore} highScore={highScore}/>
+			
 			<div className="game-area">
+			<Grid container className="game-grid" columns="12">
 				{ planeList.map(plane => <GameCard key={plane} cardID={plane} cardName={planeNames[plane]} cardClickHandler={cardClickHandler}/>) }
+			</Grid>
 			</div>
 		</div>
 	);
