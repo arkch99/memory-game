@@ -59,19 +59,19 @@ const App = function() {
 	useEffect(() => { 
 		const newPlaneList = getRandomIDList();
 		setPlaneList(newPlaneList);
-	}, [currScore]);
+		setHighScore((highScore > currScore) ? highScore : currScore);
+	}, [currScore, highScore]);
 
 	const cardClickHandler = function(cardID){
 		if(clickedSet.has(cardID)) 
 		{
-			setClickedSet((new Set()).add(cardID));			
+			setClickedSet(new Set());
 			setCurrScore(0);
 		}
 		else
 		{
 			setClickedSet(clickedSet.add(cardID));
-			setHighScore((highScore > currScore) ? highScore : currScore);
-			setCurrScore(currScore + 1);
+			setCurrScore(currScore + 1);						
 			if(clickedSet.size === 20)
 			{
 				alert("Good job!");
@@ -93,7 +93,11 @@ const App = function() {
 			<ScoreDisplay currScore={currScore} highScore={highScore}/>
 			
 			<div className="game-area">
-			<Grid container className="game-grid" columns="12" columnSpacing="40">
+			<Grid container 
+				className="game-grid" 
+				columns="12" 
+				columnSpacing="40"
+			>
 				{ planeList.map(plane => <GameCard key={plane} cardID={plane} cardName={planeNames[plane]} cardClickHandler={cardClickHandler}/>) }
 			</Grid>
 			</div>
