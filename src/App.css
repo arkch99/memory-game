@@ -1,6 +1,7 @@
 *{
 	margin: 0px;
 	padding: 0px;
+	font-family: roboto;
 }
 
 img
@@ -15,7 +16,10 @@ img
 }
 
 .info-display{	
-	display: flex;
+	display: flex;	
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 20px;
 }
 
 #instructions{	

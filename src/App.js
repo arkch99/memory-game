@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
+import { createTheme, ThemeProvider } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import shuffle from 'shuffle-array';
@@ -10,7 +11,18 @@ import '@fontsource/roboto';
 
 import './App.css';
 
-// const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+const theme = createTheme({
+	typography:{
+		h1:{
+			fontSize: '55px'
+		},
+		h2:{
+			fontSize: '25px'
+		}
+	}	
+});
+
+// 1-20, format: const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
 const range = (() => Array.from({ length: (20 - 1) / 1 + 1}, (_, i) => 1 + (i * 1)))(); 
 
 const planeNames = {
@@ -86,9 +98,14 @@ const App = function() {
 	return (
 		<div>
 			<AppBar position="static" className="app-bar">
-				<Typography variant="h1" className="app-header">
+				<ThemeProvider theme={theme}>
+				<Typography 
+					variant="h1" 
+					className="app-header"									
+				>
 					Warbird Memory Game
 				</Typography>
+				</ThemeProvider>
 			</AppBar>
 			<div className="main-content">				
 				<div className="info-display">
@@ -102,17 +119,19 @@ const App = function() {
 				<div className="game-area">
 					<Grid container 
 						className="game-grid" 
-						columns="12" 
 						columnSpacing="40"
 					>
 						{ 
 							planeList.map(plane => 
+							<ThemeProvider theme={theme}>
 							<GameCard 
 								key={plane} 
 								cardID={plane} 
 								cardName={planeNames[plane]} 
 								cardClickHandler={cardClickHandler}
-							/>)
+							/>
+							</ThemeProvider>
+							)
 						}
 					</Grid>
 				</div>

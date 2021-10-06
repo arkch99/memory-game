@@ -18,7 +18,7 @@ const GameCard = function(props){
 					className="card-img"
 					image={`/assets/images/${props.cardID}.jpg`}
 				/>			
-				<CardContent>
+				<CardContent>				
 					<Typography 
 						gutterBottom
 						variant="h2"
