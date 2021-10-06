@@ -14,9 +14,14 @@ img
 	flex-direction: column;
 }
 
-#info-display{	
-	flex-grow: 1;	
-	align-self: flex-end;
+.info-display{	
+	display: flex;
+}
+
+#instructions{	
+	align-self: flex-start;
+	flex-grow: 1;
+	margin-left: 10px;
 }
 
 .game-area .game-grid{

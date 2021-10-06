@@ -90,8 +90,13 @@ const App = function() {
 					Warbird Memory Game
 				</Typography>
 			</AppBar>
-			<div className="main-content">
+			<div className="main-content">				
 				<div className="info-display">
+					<span id="instructions">
+						<p>
+							Click on a tile. Avoid clicking on any tile more than once.
+						</p>
+					</span>
 					<ScoreDisplay currScore={currScore} highScore={highScore}/>
 				</div>
 				<div className="game-area">
