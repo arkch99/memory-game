@@ -9,6 +9,16 @@ img
 	width: 200px;
 }
 
+.main-content{
+	display:flex;
+	flex-direction: column;
+}
+
+#info-display{	
+	flex-grow: 1;	
+	align-self: flex-end;
+}
+
 .game-area .game-grid{
 	display: flex;	
 	flex-flow: row wrap;

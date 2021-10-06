@@ -90,16 +90,27 @@ const App = function() {
 					Warbird Memory Game
 				</Typography>
 			</AppBar>
-			<ScoreDisplay currScore={currScore} highScore={highScore}/>
-			
-			<div className="game-area">
-			<Grid container 
-				className="game-grid" 
-				columns="12" 
-				columnSpacing="40"
-			>
-				{ planeList.map(plane => <GameCard key={plane} cardID={plane} cardName={planeNames[plane]} cardClickHandler={cardClickHandler}/>) }
-			</Grid>
+			<div className="main-content">
+				<div className="info-display">
+					<ScoreDisplay currScore={currScore} highScore={highScore}/>
+				</div>
+				<div className="game-area">
+					<Grid container 
+						className="game-grid" 
+						columns="12" 
+						columnSpacing="40"
+					>
+						{ 
+							planeList.map(plane => 
+							<GameCard 
+								key={plane} 
+								cardID={plane} 
+								cardName={planeNames[plane]} 
+								cardClickHandler={cardClickHandler}
+							/>)
+						}
+					</Grid>
+				</div>
 			</div>
 		</div>
 	);
