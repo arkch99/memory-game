@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Typography from '@material-ui/core/Typography';
-import { createTheme, ThemeProvider } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
+import '@fontsource/roboto';
 import AppBar from '@material-ui/core/AppBar';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import React, { useEffect, useState } from 'react';
 import shuffle from 'shuffle-array';
+
+import './App.css';
 import GameCard from './components/GameCard';
 import ScoreDisplay from './components/ScoreDisplay';
 
-import '@fontsource/roboto';
-
-import './App.css';
-
-const theme = createTheme({
-	typography:{
-		h1:{
-			fontSize: '55px'
-		},
-		h2:{
-			fontSize: '25px'
-		}
-	}	
-});
 
 // 1-20, format: const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
 const range = (() => Array.from({ length: (20 - 1) / 1 + 1}, (_, i) => 1 + (i * 1)))(); 
@@ -43,14 +31,13 @@ const planeNames = {
 	"15": "P-39",
 	"16": "Ki-43",
 	"17": "F4F",
-	"18": "IL-2",
+	"18": "Il-2",
 	"19": "P-38",
 	"20": "Meteor",
 };
 
 const getRandomIDList = function(){
 	const newPlaneList = shuffle(range, {'copy':true});	
-	// console.log(newPlaneList);
 	return newPlaneList;
 }
 
@@ -95,17 +82,17 @@ const App = function() {
 		}
 	}
 
-	return (
-		<div>
+	return (			
+		<div>		
 			<AppBar position="static" className="app-bar">
-				<ThemeProvider theme={theme}>
+				
 				<Typography 
 					variant="h1" 
-					className="app-header"									
+					className="app-header"				
 				>
 					Warbird Memory Game
 				</Typography>
-				</ThemeProvider>
+				
 			</AppBar>
 			<div className="main-content">				
 				<div className="info-display">
@@ -118,25 +105,24 @@ const App = function() {
 				</div>
 				<div className="game-area">
 					<Grid container 
-						className="game-grid" 
-						columnSpacing="40"
+						className="game-grid"
+						style={{gap:15}}
 					>
 						{ 
 							planeList.map(plane => 
-							<ThemeProvider theme={theme}>
 							<GameCard 
 								key={plane} 
 								cardID={plane} 
 								cardName={planeNames[plane]} 
-								cardClickHandler={cardClickHandler}
+								cardClickHandler={cardClickHandler}								
 							/>
-							</ThemeProvider>
 							)
 						}
 					</Grid>
 				</div>
 			</div>
 		</div>
+		
 	);
 }
 
