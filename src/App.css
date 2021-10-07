@@ -1,41 +1,40 @@
-*{
-	margin: 0px;
-	padding: 0px;
-	font-family: roboto;	
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: roboto;
 }
 
-img
-{
-	height: 200px;
-	width: 200px;
+img {
+  height: 200px;
+  width: 200px;
 }
 
-.app-header{
-	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 5px;
+.app-header {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.main-content{
-	display:flex;
-	flex-direction: column;
+.main-content {
+  display: flex;
+  flex-direction: column;
 }
 
-.info-display{	
-	display: flex;	
-	margin-top: 15px;
-	margin-bottom: 15px;
-	font-size: 20px;
+.info-display {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
-#instructions{	
-	align-self: flex-start;
-	flex-grow: 1;
-	margin-left: 10px;
+#instructions {
+  align-self: flex-start;
+  flex-grow: 1;
+  margin-left: 10px;
 }
 
-.game-area .game-grid{
-	display: flex;	
-	flex-flow: row wrap;
-	justify-content: space-around;
+.game-area .game-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
