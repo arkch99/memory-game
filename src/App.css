@@ -10,6 +10,12 @@ img
 	width: 200px;
 }
 
+.app-header{
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 .main-content{
 	display:flex;
 	flex-direction: column;
